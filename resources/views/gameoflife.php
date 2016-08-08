@@ -19,21 +19,78 @@
 </style>
 
 
+<script type="text/javascript">
+    
+
+  var cels=[];
+
+
+  function selecc(fila,columna){
+    fila = fila.toString();
+    columna = columna.toString();
+    id=fila+columna;
+   
+    
+  if(  document.getElementById(id).style.backgroundColor == "black")
+  {
+  document.getElementById(id).style.backgroundColor = "white";
+  document.getElementById(id).style.color = "white";
+  cels[fila,columna]=false;
+ 
+
+  }else{   
+  document.getElementById(id).style.backgroundColor = "black";
+  document.getElementById(id).style.color = "black";
+  cels[fila,columna]=true;
+  
+  }
+ alert(fila+' '+ columna);
+
+ 
+  }
+
+
+  function play(){
+
+    for (var fila =0; i<=50; i++) {
+      
+
+      for (var i = 0; i <= 100; i++) {
+
+        if(cels[fila,columna]==true){
+
+          if(cels[fila+1,columna+1]){true}
+        }else{
+
+
+        }
+
+        
+      }
+
+    }
+
+  }
+
+
+</script>
 
   </head>
   <body>
-    <div name='generate' class='col-md-12'>
+    <div name='generate' class='col-md-12' >
 <hr>
     <button class="btn btn-primary" onclick='play()'>START GAME</button>
 <hr>
 <table>
 
-<?for($i=0;$i<=100;$i++){?>
+<?for($i=1;$i<=30;$i++)// filas
+{?>
 
 <tr>
-<?for($j=0;$j<=100;$j++){?>
+<?for($j=1;$j<=50;$j++)//columnas
+{?> 
 
-<td  onclick="selecc(<?echo $i.$j;?>);" id="<?echo $i.$j;?>">
+<td  onclick="selecc(<?echo $i;?>,<?echo $j;?>);" id="<?echo $i.$j;?>">
 AA
 </td>
 <?}?>
@@ -49,26 +106,5 @@ AA
     </div>
 
 
-<script type="text/javascript">
-    
-  var arr=[];
-
-  function selecc(id){
-    
-  document.getElementById(id).style.backgroundColor = "black";
-  document.getElementById(id).style.color = "black";
- 
-  }
-
-
-  function play(){
-
-
-    for (var i = Things.length - 1; i >= 0; i--) {
-      Things[i]
-    }
-
-  }
-</script>
   </body>
 </html>
